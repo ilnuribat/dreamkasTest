@@ -22,7 +22,6 @@ app.use((req, res, next) => {
 });
 
 app.use((err, req, res, next) => {
-  console.log(`error happenned - ${err.message}`);
   res.json({
     'ok': false,
     'error': err.message
@@ -32,3 +31,5 @@ app.use((err, req, res, next) => {
 app.listen(port, () => {
   console.log(`server is running in ${port} port`);
 });
+
+module.exports = app;

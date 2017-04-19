@@ -24,7 +24,6 @@ module.exports = (req, res, next) => {
   let sqlQuery = `INSERT INTO books(name, author, year) VALUES($1, $2, $3) RETURNING id;`;
   sql(sqlQuery, [name, author, year])
   .then(result => {
-    console.log(result);
     let bookId = result.rows[0].id;
     res['result'] = {bookId};
     next();

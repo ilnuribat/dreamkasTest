@@ -12,7 +12,7 @@ module.exports = (req, res, next) => {
     if (result.rowCount == 0)
       throw new Error('no such book to delete');
     res['result'] = {
-      'message': 'book deleted'
+      'message': 'deleted'
     }
     next();
   })
